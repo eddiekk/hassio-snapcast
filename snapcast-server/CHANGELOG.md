@@ -1,4 +1,8 @@
 <!-- https://developers.home-assistant.io/docs/add-ons/presentation#keeping-a-changelog -->
+## 0.4.5
+
+- update: bump librespot to 0.8.0
+
 ## 0.4.4
 
 - update: bump ghcr.io/hassio-addons/base to v18.1.0

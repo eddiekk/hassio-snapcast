@@ -2,7 +2,7 @@
 ARG BUILD_FROM=ghcr.io/hassio-addons/base:18.1.0
 FROM $BUILD_FROM
 
-ARG LIBRESPOT_VERSION=0.7.0
+ARG LIBRESPOT_VERSION=0.8.0
 ARG GM_RENDER_RESURRECT_VERSION=v0.3
 
 # Add Runtime Dependencies
@@ -116,11 +116,11 @@ LABEL \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
-    maintainer="DjFabFab" \
+    maintainer="eddiekk" \
     org.opencontainers.image.title="${BUILD_NAME}" \
     org.opencontainers.image.description="${BUILD_DESCRIPTION}" \
-    org.opencontainers.image.vendor="DjFabFab's addons" \
-    org.opencontainers.image.authors="DjFabFab" \
+    org.opencontainers.image.vendor="eddiekk's addons" \
+    org.opencontainers.image.authors="eddiekk" \
     org.opencontainers.image.licenses="MIT" \
     org.opencontainers.image.url="https://github.com/${BUILD_REPOSITORY}" \
     org.opencontainers.image.source="https://github.com/${BUILD_REPOSITORY}" \
