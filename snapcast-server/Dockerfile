@@ -37,42 +37,38 @@ RUN apk add --no-cache \
 RUN apk add --no-cache --virtual .build-dependencies \
         # cargo dependencies
         cargo \
+        avahi-dev \
+        # gmrender-resurrect dependencies
+        git \
+        autoconf \
+        automake \
+        g++ \
+        make \
+        cmake
         # cmake \
-        avahi-dev
         # make \
         # rust-bindgen \
-        # clang18-dev
+        # clang18-dev \
+        # build-base \
+        # protobuf-dev \
+        # pulseaudio-dev \
+        # libtool \
+        # pkgconf \
+        # gcc \
+        # rust-bindgen
 
 RUN cargo install \
         --locked \
+        --version ${LIBRESPOT_VERSION} \
         --no-default-features \
         --features with-avahi,rustls-tls-native-roots \
         --root /usr \
         --bin librespot \
-        --version ${LIBRESPOT_VERSION} \
         # --verbose \
         librespot
 
-# Add Compiling Dependencies
-RUN apk add --no-cache --virtual .build-dependencies \
-        # gmrender-resurrect dependencies
-        git \
-        # build-base \
-        # protobuf-dev \
-        # pulseaudio-dev \
-        autoconf \
-        automake \
-        # libtool \
-        # pkgconf \  
-        # gcc \
-        g++ \
-        make \
-        cmake
-        # rust-bindgen
-
 RUN git clone https://github.com/hzeller/gmrender-resurrect.git \
-	&& mkdir -p /gmrender-resurrect \
-	&& cd /gmrender-resurrect \
+	&& cd gmrender-resurrect \
         && git checkout ${GM_RENDER_RESURRECT_VERSION} \
 	&& ./autogen.sh \
 	&& ./configure \
@@ -86,7 +82,7 @@ RUN apk del --no-cache --purge .build-dependencies \
                 ~/.cargo \
                 /usr/.crates.toml \
                 /usr/.crates2.json \
-                /gmrender-resurrect
+                gmrender-resurrect
 
 # RUN apk add --no-cache librespot=0.6.0-r0 --repository=https://dl-cdn.alpinelinux.org/alpine/edge/testing
 RUN apk add --no-cache snapweb=0.9.1-r0 --repository=https://dl-cdn.alpinelinux.org/alpine/edge/testing
