@@ -2,6 +2,8 @@
 ARG BUILD_FROM=ghcr.io/hassio-addons/base:18.1.0
 FROM $BUILD_FROM
 
+# Trigger rebuild after enabling workflows
+
 ARG LIBRESPOT_VERSION=0.8.0
 ARG GM_RENDER_RESURRECT_VERSION=v0.3
 
