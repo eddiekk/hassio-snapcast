@@ -85,7 +85,7 @@ RUN apk del --no-cache --purge .build-dependencies \
                 gmrender-resurrect
 
 # RUN apk add --no-cache librespot=0.6.0-r0 --repository=https://dl-cdn.alpinelinux.org/alpine/edge/testing
-RUN apk add --no-cache snapweb=0.9.1-r0 --repository=https://dl-cdn.alpinelinux.org/alpine/edge/testing
+RUN apk add --no-cache snapweb --repository=https://dl-cdn.alpinelinux.org/alpine/edge/testing
 
 RUN addgroup root audio
 
