@@ -15,7 +15,7 @@ init: false
 arch:
   # - armhf
   # - armv7
-  - aarch64
+  # - aarch64  # Skipped in CI builds (too slow), can be built manually if needed
   - amd64
   # - i386
 map:
@@ -64,5 +64,4 @@ schema:
   librespot_options: str?
   spotify_token: password?
   log_level: list(trace|debug|info|notice|warning|error|fatal)
-# Comment out image line to force local build in Home Assistant
-# image: "ghcr.io/eddiekk/{arch}-snapcast-server"
+image: "ghcr.io/eddiekk/{arch}-snapcast-server"
