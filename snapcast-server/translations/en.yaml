@@ -34,8 +34,7 @@ configuration:
     description: "The name of the device as shown in Spotify. Default: \"Home Assistant Sound System\""
   librespot_options:
     name: "Default Spotify stream options"
-    description: "Optional query parameters appended to the default librespot source. Provide key=value pairs separated by &. See https://github.com/librespot-org/librespot/wiki/Options 
-      for the supported flags. Leave empty to use the built-in defaults.
+    description: "Optional query parameters appended to the default librespot source. Provide key=value pairs separated by &. See https://github.com/librespot-org/librespot/wiki/Options for the supported flags. Leave empty to use the built-in defaults."
   spotify_token:
     name: "Spotify token"
     description: "Optional Spotify access token. Obtained from: https://open.spotify.com/get_access_token. More Info: https://github.com/librespot-org/librespot/wiki/Options#access-token"
