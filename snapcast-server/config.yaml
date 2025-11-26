@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: Snapcast server
-version: "0.4.5"
+version: "0.4.6"
 slug: snapcast-server
 description: Snapcast server with Spotify connect and DLNA Renderer support
 url: "https://github.com/eddiekk/hassio-snapcast/tree/main/snapcast-server"
@@ -40,9 +40,12 @@ options:
   codec: flac
   send_to_muted: false
   sampleformat: "44100:16:2"
-  renderer_name: "Home Assistant DLNA Renderer"
-  spotify_name: "Home Assistant Sound System"
   initial_volume: 100
+  enable_dlna_renderer: true
+  renderer_name: "Home Assistant DLNA Renderer"
+  enable_spotify_source: true
+  spotify_name: "Home Assistant Sound System"
+  librespot_options: ""
   log_level: info
 schema:
   # Use nested option to force yaml editor on addon's config page
@@ -51,11 +54,14 @@ schema:
   buffer: int
   chunk_ms: int
   codec: list(pcm|flac|vorbis|opus)
-  renderer_name: str
-  send_to_muted: bool
   sampleformat: str
-  spotify_name: str
-  spotify_token: password?
+  send_to_muted: bool
   initial_volume: int(0,100)
+  enable_dlna_renderer: bool
+  renderer_name: str
+  enable_spotify_source: bool
+  spotify_name: str
+  librespot_options: str?
+  spotify_token: password?
   log_level: list(trace|debug|info|notice|warning|error|fatal)
 image: "ghcr.io/eddiekk/{arch}-snapcast-server"

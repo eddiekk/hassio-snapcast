@@ -1,7 +1,16 @@
 <!-- https://developers.home-assistant.io/docs/add-ons/presentation#keeping-a-changelog -->
-## 0.4.5
+## 0.4.6 (2025-11-26)
 
-- update: bump librespot to 0.8.0
+- feat: add configuration toggles to disable the built-in Spotify and DLNA sources
+- feat: add optional librespot parameter passthrough for the default Spotify source
+- feat: surface detailed UI descriptions, including librespot advanced options
+- docs: document new configuration workflow
+
+## 0.4.5 (2025-11-25)
+
+- Forked from DjFabFab's snapcast-server 0.4.4
+- feat: add initial Snapcast client volume control in UI
+- update: bump librespot to 0.8.0 (fixes broken Spotify stream)
 
 ## 0.4.4
 

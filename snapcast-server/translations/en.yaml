@@ -1,24 +1,52 @@
 configuration:
   streams:
-    name: Streams
-    description: The streams that can be selected as input. See https://github.com/badaix/snapcast/blob/master/doc/configuration.md on how to format them.
+    name: Additional streams
+    description: Optionally define additional streams that can be selected as input. See https://github.com/badaix/snapcast/blob/master/doc/configuration.md on how to format them.
   buffer:
-    name: Buffer
+    name: Buffer [ms]
+    description: The end-to-end latency, from capturing a sample on the server until the sample is played-out on the client. Default: 1000
   chunk_ms:
     name: Default source stream read chunk size [ms].
+    description: > 
+      The server will continously read this number of milliseconds from the source into a buffer, before this buffer is passed to the encoder (the codec below) Default: 20
   codec:
     name: Codec
-    description: Codec to use for streaming to snapcast clients.
+    description: Codec to use for streaming to snapcast clients. Default: flac
   send_to_muted:
     name: Send to muted clients
+    description: Send audio to clients that are muted. Default: false
   sampleformat:
     name: Sample format
+    description: Override the global sample format. Default: 44100:16:2
+  initial_volume:
+    name: Initial client volume
+    description: > 
+      The volume a streaming client gets assigned on very first connect (i.e. the client is not known to the server yet). Default: 100
+      Useful if you want to avoid accidentally blowing a speaker on first connect
+  enable_dlna_renderer:
+    name: Enable default DLNA Renderer source
+    description: Toggle the built-in DLNA Renderer input that feeds gmrender-resurrect into Snapcast. Default: true
+  renderer_name:
+    name: DLNA Renderer device name
+    description: Friendly name advertised for the built-in DLNA Renderer. Default: \"Home Assistant DLNA Renderer\"
+  enable_spotify_source:
+    name: Enable default Spotify (librespot) source
+    description: Toggle the built-in librespot source that exposes this add-on as a Spotify Connect target. Default: true
   spotify_name:
     name: Spotify device name
     description: The name of the device as shown in Spotify
+  librespot_options:
+    name: Librespot specific options (modifies the default Spotify stream)
+    description: >
+      Optional query parameters appended to the default librespot source. Provide
+      key=value pairs separated by &. See https://github.com/librespot-org/librespot/wiki/Options 
+      for the supported flags. Leave empty to use the built-in defaults.
+      
+      Example:  initial-volume=40&autoplay=true
+      This will set the initial (Spotify) volume to 40% and will autoplay similar songs when your music ends.
+      Useful if you want to set the manual speaker volume to whatever the max allowed volume should be, and 
+      use your phone's volume buttons to control the volume.
   spotify_token:
     name: "Spotify token. Obtained from: https://open.spotify.com/get_access_token. More Info: https://github.com/librespot-org/librespot/wiki/Options#access-token"
-  renderer_name:
-    name: DLNA Renderer device name
   log_level:
-    name: Log level
+    name: Log level     

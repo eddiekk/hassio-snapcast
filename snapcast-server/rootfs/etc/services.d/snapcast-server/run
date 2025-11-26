@@ -26,10 +26,14 @@ for stream in $(bashio::config 'streams.streams'); do
 done
 
 sampleformat=$(bashio::config 'sampleformat')
-# Add DLNA Media Renderer source
-{
-    echo "source = pipe:///share/snapfifo?&name=DLNA&disable_audio_cache=true&sampleformat=${sampleformat}"
-} >> "${config}"
+
+# Add DLNA Media Renderer source if enabled
+if bashio::config.true 'enable_dlna_renderer'; then
+    bashio::log.info "Enabling built-in DLNA Renderer source"
+    echo "source = pipe:///share/snapfifo?&name=DLNA&disable_audio_cache=true&sampleformat=${sampleformat}" >> "${config}"
+else
+    bashio::log.info "Skipping built-in DLNA Renderer source (disabled via configuration)"
+fi
 
 # Add the Spotify source
 device_name=$(bashio::config 'spotify_name')
@@ -40,8 +44,25 @@ if bashio::config.has_value 'spotify_token'; then
     spotify_auth="&access_token=${token}"
 fi
 
+librespot_options=""
+if bashio::config.has_value 'librespot_options'; then
+    raw_params=$(bashio::config 'librespot_options')
+    raw_params="${raw_params//$'\r'/}"
+    raw_params="${raw_params//$'\n'/}"
+    raw_params="${raw_params#&}"
+    if [[ -n "${raw_params}" ]]; then
+        librespot_options="&${raw_params}"
+    fi
+fi
+
+if bashio::config.true 'enable_spotify_source'; then
+    bashio::log.info "Enabling built-in Spotify (librespot) source"
+    echo "source = librespot:///usr/bin/librespot?name=Spotify&devicename="${device_name}"${spotify_auth}&disable_audio_cache=true&cache=/data/spot${librespot_options}" >> "${config}"
+else
+    bashio::log.warning "Built-in Spotify (librespot) source disabled via configuration"
+fi
+
 {
-    echo "source = librespot:///usr/bin/librespot?name=Spotify&devicename="${device_name}"${spotify_auth}&disable_audio_cache=true&cache=/data/spot"
     echo "buffer = $(bashio::config 'buffer')"
     echo "codec = $(bashio::config 'codec')"
     echo "send_to_muted = $(bashio::config 'send_to_muted')"
