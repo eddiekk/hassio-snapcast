@@ -26,7 +26,7 @@ configuration:
     name: "Enable default DLNA Renderer source"
     description: "Toggle the built-in DLNA Renderer input that feeds gmrender-resurrect into Snapcast. Default: true"
   renderer_name:
-    name: "DLNA Renderer device name
+    name: "DLNA Renderer device name"
     description: "Friendly name advertised for the built-in DLNA Renderer. Default: \"Home Assistant DLNA Renderer\""
   enable_spotify_source:
     name: "Enable default Spotify (librespot) source"
