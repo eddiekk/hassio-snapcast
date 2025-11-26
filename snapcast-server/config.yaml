@@ -65,4 +65,4 @@ schema:
   spotify_token: password?
   log_level: list(trace|debug|info|notice|warning|error|fatal)
 # Comment out image line to force local build in Home Assistant
-image: "ghcr.io/eddiekk/{arch}-snapcast-server"
+# image: "ghcr.io/eddiekk/{arch}-snapcast-server"
