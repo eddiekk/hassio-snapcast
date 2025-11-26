@@ -46,7 +46,8 @@ configuration:
       Useful if you want to set the manual speaker volume to whatever the max allowed volume should be, and 
       use your phone's volume buttons to control the volume.
   spotify_token:
-    name: "Spotify token. Obtained from: https://open.spotify.com/get_access_token. More Info: https://github.com/librespot-org/librespot/wiki/Options#access-token"
+    name: Spotify token
+    description: "Optional Spotify access token. Obtained from: https://open.spotify.com/get_access_token. More Info: https://github.com/librespot-org/librespot/wiki/Options#access-token"
   log_level:
     name: Log level
     description: Set the logging verbosity level. Default: info
