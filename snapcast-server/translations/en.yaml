@@ -19,9 +19,7 @@ configuration:
     description: "Send audio to clients that are muted. Default: false"
   initial_volume:
     name: "Initial client volume"
-    description: > 
-      The volume a streaming client gets assigned on very first connect (i.e. the client is not known to the server yet). Default: 100
-      Useful if you want to avoid accidentally blowing a speaker on first connect
+    description: "The volume a streaming client gets assigned on very first connect (i.e. the client is not known to the server yet). Useful if you want to avoid accidentally blowing a speaker on first connect. Default: 100"
   enable_dlna_renderer:
     name: "Enable default DLNA Renderer source"
     description: "Toggle the built-in DLNA Renderer input that feeds gmrender-resurrect into Snapcast. Default: true"
@@ -29,22 +27,15 @@ configuration:
     name: "DLNA Renderer device name"
     description: "Friendly name advertised for the built-in DLNA Renderer. Default: \"Home Assistant DLNA Renderer\""
   enable_spotify_source:
-    name: "Enable default Spotify (librespot) source"
+    name: "Enable default Spotify source"
     description: "Toggle the built-in librespot source that exposes this add-on as a Spotify Connect target. Default: true"
   spotify_name:
     name: "Spotify device name"
-    description: "The name of the device as shown in Spotify"
+    description: "The name of the device as shown in Spotify. Default: \"Home Assistant Sound System\""
   librespot_options:
-    name: "Librespot specific options (modifies the default Spotify stream)"
-    description: ">
-      Optional query parameters appended to the default librespot source. Provide
-      key=value pairs separated by &. See https://github.com/librespot-org/librespot/wiki/Options 
+    name: "Default Spotify stream options"
+    description: "Optional query parameters appended to the default librespot source. Provide key=value pairs separated by &. See https://github.com/librespot-org/librespot/wiki/Options 
       for the supported flags. Leave empty to use the built-in defaults.
-      
-      Example:  initial-volume=40&autoplay=true
-      This will set the initial (Spotify) volume to 40% and will autoplay similar songs when your music ends.
-      Useful if you want to set the manual speaker volume to whatever the max allowed volume should be, and 
-      use your phone's volume buttons to control the volume."
   spotify_token:
     name: "Spotify token"
     description: "Optional Spotify access token. Obtained from: https://open.spotify.com/get_access_token. More Info: https://github.com/librespot-org/librespot/wiki/Options#access-token"
