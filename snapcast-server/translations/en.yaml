@@ -19,8 +19,8 @@ configuration:
     description: "Send audio to clients that are muted. Default: false"
   initial_volume:
     name: "Initial client volume"
-    description: "> 
-      The volume a streaming client gets assigned on very first connect (i.e. the client is not known to the server yet). Default: 100
+    description: > 
+      "The volume a streaming client gets assigned on very first connect (i.e. the client is not known to the server yet). Default: 100
       Useful if you want to avoid accidentally blowing a speaker on first connect"
   enable_dlna_renderer:
     name: "Enable default DLNA Renderer source"
