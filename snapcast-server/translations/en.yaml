@@ -4,30 +4,30 @@ configuration:
     description: Optionally define additional streams that can be selected as input. See https://github.com/badaix/snapcast/blob/master/doc/configuration.md on how to format them.
   buffer:
     name: Buffer [ms]
-    description: The end-to-end latency, from capturing a sample on the server until the sample is played-out on the client. Default: 1000
+    description: The end-to-end latency, from capturing a sample on the server until the sample is played-out on the client. Default/: 1000
   chunk_ms:
     name: Default source stream read chunk size [ms].
-    description: The server will continously read this number of milliseconds from the source into a buffer, before this buffer is passed to the encoder (the codec below) Default: 20
+    description: The server will continously read this number of milliseconds from the source into a buffer, before this buffer is passed to the encoder (the codec below) Default/: 20
   codec:
     name: Codec
-    description: Codec to use for streaming to snapcast clients. Default: flac
+    description: Codec to use for streaming to snapcast clients. Default/: flac
   sampleformat:
     name: Sample format
-    description: Override the global sample format. Default: 44100:16:2
+    description: Override the global sample format. Default/: 44100:16:2
   send_to_muted:
     name: Send to muted clients
-    description: Send audio to clients that are muted. Default: false
+    description: Send audio to clients that are muted. Default/: false
   initial_volume:
     name: Initial client volume
   enable_dlna_renderer:
     name: Enable default DLNA Renderer source
-    description: Toggle the built-in DLNA Renderer input that feeds gmrender-resurrect into Snapcast. Default: true
+    description: Toggle the built-in DLNA Renderer input that feeds gmrender-resurrect into Snapcast. Default/: true
   renderer_name:
     name: DLNA Renderer device name
-    description: Friendly name advertised for the built-in DLNA Renderer. Default: \"Home Assistant DLNA Renderer\"
+    description: Friendly name advertised for the built-in DLNA Renderer. Default/: \"Home Assistant DLNA Renderer\"
   enable_spotify_source:
     name: Enable default Spotify (librespot) source
-    description: Toggle the built-in librespot source that exposes this add-on as a Spotify Connect target. Default: true
+    description: Toggle the built-in librespot source that exposes this add-on as a Spotify Connect target. Default/: true
   spotify_name:
     name: Spotify device name
     description: The name of the device as shown in Spotify
@@ -38,4 +38,4 @@ configuration:
     description: "Optional Spotify access token. Obtained from: https://open.spotify.com/get_access_token. More Info: https://github.com/librespot-org/librespot/wiki/Options#access-token"
   log_level:
     name: Log level
-    description: Set the logging verbosity level. Default: info
+    description: Set the logging verbosity level. Default/: info
