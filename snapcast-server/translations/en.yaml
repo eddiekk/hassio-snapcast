@@ -9,26 +9,25 @@ configuration:
   codec:
     name: Codec
     description: Codec to use for streaming to snapcast clients.
-  send_to_muted:
-    name: Send to muted clients
   sampleformat:
     name: Sample format
-  spotify_name:
-    name: Spotify device name
-    description: The name of the device as shown in Spotify
-  spotify_token:
-    name: "Spotify token. Obtained from: https://open.spotify.com/get_access_token. More Info: https://github.com/librespot-org/librespot/wiki/Options#access-token"
-  renderer_name:
-    name: DLNA Renderer device name
+  send_to_muted:
+    name: Send to muted clients
   initial_volume:
     name: Initial client volume
     description: Sets the starting volume for Snapcast clients, shown in Snapweb.
-  log_level:
-    name: Log level
+  enable_dlna_renderer:
+    name: Enable default DLNA Renderer source
+  renderer_name:
+    name: DLNA Renderer device name
+  enable_spotify_source:
+    name: Enable default Spotify (librespot) source
+  spotify_name:
+    name: Spotify device name
+    description: The name of the device as shown in Spotify
   librespot_options:
     name: Librespot specific options (modifies the default Spotify stream)
-    description: >
-      Optional query parameters appended to the default librespot source. Provide
-      key=value pairs separated by & (without the leading ?). See
-      https://github.com/librespot-org/librespot/wiki/Options for the supported
-      flags. Leave empty to use the built-in defaults.
+  spotify_token:
+    name: "Spotify token. Obtained from: https://open.spotify.com/get_access_token. More Info: https://github.com/librespot-org/librespot/wiki/Options#access-token"
+  log_level:
+    name: Log level
