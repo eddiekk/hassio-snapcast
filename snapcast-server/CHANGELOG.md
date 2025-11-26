@@ -1,4 +1,8 @@
 <!-- https://developers.home-assistant.io/docs/add-ons/presentation#keeping-a-changelog -->
+## 0.4.7 (2025-11-26)
+
+- fix: descriptions in config not displayed
+
 ## 0.4.6 (2025-11-26)
 
 - feat: add configuration toggles to disable the built-in Spotify and DLNA sources

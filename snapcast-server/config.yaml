@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: Snapcast server
-version: "0.4.6"
+version: "0.4.7"
 slug: snapcast-server
 description: Snapcast server with Spotify connect and DLNA Renderer support
 url: "https://github.com/eddiekk/hassio-snapcast/tree/main/snapcast-server"
@@ -64,4 +64,5 @@ schema:
   librespot_options: str?
   spotify_token: password?
   log_level: list(trace|debug|info|notice|warning|error|fatal)
+# Comment out image line to force local build in Home Assistant
 image: "ghcr.io/eddiekk/{arch}-snapcast-server"

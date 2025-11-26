@@ -7,8 +7,7 @@ configuration:
     description: The end-to-end latency, from capturing a sample on the server until the sample is played-out on the client. Default: 1000
   chunk_ms:
     name: Default source stream read chunk size [ms].
-    description: > 
-      The server will continously read this number of milliseconds from the source into a buffer, before this buffer is passed to the encoder (the codec below) Default: 20
+    description: The server will continously read this number of milliseconds from the source into a buffer, before this buffer is passed to the encoder (the codec below) Default: 20
   codec:
     name: Codec
     description: Codec to use for streaming to snapcast clients. Default: flac
@@ -49,4 +48,5 @@ configuration:
   spotify_token:
     name: "Spotify token. Obtained from: https://open.spotify.com/get_access_token. More Info: https://github.com/librespot-org/librespot/wiki/Options#access-token"
   log_level:
-    name: Log level     
+    name: Log level
+    description: Set the logging verbosity level. Default: info
