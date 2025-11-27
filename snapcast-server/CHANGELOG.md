@@ -1,6 +1,6 @@
 ## 0.4.8 (2025-11-27)
 
-- feat: enable builds for all supported architectures (amd64, armhf, armv7, aarch64, i386)
+- feat: enable builds for all supported architectures (amd64, aarch64)
 
 ## 0.4.7 (2025-11-26)
 
