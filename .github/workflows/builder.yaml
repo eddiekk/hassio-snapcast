@@ -64,7 +64,7 @@ jobs:
     strategy:
       matrix:
         addon: ${{ fromJson(needs.init.outputs.changed_addons) }}
-        arch: ["amd64", "armhf", "armv7", "aarch64", "i386"]
+        arch: ["amd64", "aarch64"]
 
     steps:
       - name: Check out repository
@@ -80,8 +80,14 @@ jobs:
         id: check
         run: |
           if [[ "${{ steps.info.outputs.architectures }}" =~ ${{ matrix.arch }} ]]; then
+             # Extract image name and validate it's not empty
+             image_name=$(echo "${{ steps.info.outputs.image }}" | cut -d'/' -f3)
+             if [[ -z "${image_name}" ]] || [[ "${image_name}" == "null" ]]; then
+               echo "Error: Could not extract valid image name from '${{ steps.info.outputs.image }}'"
+               exit 1
+             fi
              echo "build_arch=true" >> $GITHUB_OUTPUT
-             echo "image=$(echo ${{ steps.info.outputs.image }} | cut -d'/' -f3)" >> $GITHUB_OUTPUT
+             echo "image=${image_name}" >> $GITHUB_OUTPUT
              if [[ -z "${{ github.head_ref }}" ]] && [[ "${{ github.event_name }}" == "push" ]]; then
                  echo "BUILD_ARGS=" >> $GITHUB_ENV;
              fi
