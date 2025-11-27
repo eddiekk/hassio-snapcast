@@ -13,11 +13,11 @@ privileged:
   - SYS_ADMIN
 init: false
 arch:
-  - armhf
-  - armv7
-  - aarch64
-  - amd64 # Only enable this when testing as other are slow to build with GitHub Actions
-  - i386
+#  - armhf # not a valid arch for snapcast-server
+#  - armv7 # not a valid arch for snapcast-server
+  - aarch64 # Only enable this when creating a new release (very slow to build with GitHub Actions)
+  - amd64
+#  - i386 # not a valid arch for snapcast-server
 map:
   - share:rw
 ports:
