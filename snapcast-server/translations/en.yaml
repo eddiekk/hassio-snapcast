@@ -1,7 +1,7 @@
 configuration:
   streams:
     name: "Additional streams"
-    description: "Optionally define additional streams that can be selected as input. See https://github.com/badaix/snapcast/blob/master/doc/configuration.md on how to format them."
+    description: "Optionally define additional streams that can be selected as input. See https://github.com/badaix/snapcast/blob/master/doc/configuration.md on how to format them. Example: librespot:///usr/bin/librespot?name=StreamNameInSnapwebUI&devicename=Another%20Spotify%20Target&volume=40&normalize=true&autoplay=true"
   buffer:
     name: "Buffer [ms]"
     description: "The end-to-end latency, from capturing a sample on the server until the sample is played-out on the client. Default: 1000"
@@ -34,7 +34,7 @@ configuration:
     description: "The name of the device as shown in Spotify. Default: \"Home Assistant Sound System\""
   librespot_options:
     name: "Default Spotify stream options"
-    description: "Optional query parameters appended to the default librespot source. Provide key=value pairs separated by &. See https://github.com/librespot-org/librespot/wiki/Options for the supported flags. Leave empty to use the built-in defaults."
+    description: "Optional query parameters appended to the default librespot source. Provide key=value pairs separated by &. See https://github.com/librespot-org/librespot/wiki/Options for the supported flags. Leave empty to use the built-in defaults. Example: volume=40&autoplay=true"
   spotify_token:
     name: "Spotify token"
     description: "Optional Spotify access token. Obtained from: https://open.spotify.com/get_access_token. More Info: https://github.com/librespot-org/librespot/wiki/Options#access-token"
