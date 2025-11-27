@@ -1,0 +1,10 @@
+# Local testing files (not for distribution)
+build-local.ps1
+load-to-ha.ps1
+LOCAL_TESTING.md
+
+# Local build artifacts
+*.tar
+snapcast-server-*.tar
+
+

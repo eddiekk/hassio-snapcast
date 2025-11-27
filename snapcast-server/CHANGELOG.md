@@ -1,4 +1,7 @@
-<!-- https://developers.home-assistant.io/docs/add-ons/presentation#keeping-a-changelog -->
+## 0.4.8 (2025-11-27)
+
+- feat: enable builds for all supported architectures (amd64, armhf, armv7, aarch64, i386)
+
 ## 0.4.7 (2025-11-26)
 
 - fix: descriptions in config not displayed
@@ -7,7 +10,7 @@
 
 - feat: add configuration toggles to disable the built-in Spotify and DLNA sources
 - feat: add optional librespot parameter passthrough for the default Spotify source
-- feat: surface detailed UI descriptions, including librespot advanced options
+- feat: add detailed UI descriptions
 - docs: document new configuration workflow
 
 ## 0.4.5 (2025-11-25)

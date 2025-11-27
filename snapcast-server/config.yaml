@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: Snapcast server
-version: "0.4.7"
+version: "0.4.8"
 slug: snapcast-server
 description: Snapcast server with Spotify connect and DLNA Renderer support
 url: "https://github.com/eddiekk/hassio-snapcast/tree/main/snapcast-server"
@@ -13,11 +13,11 @@ privileged:
   - SYS_ADMIN
 init: false
 arch:
-  # - armhf
-  # - armv7
-  # - aarch64  # Skipped in CI builds (too slow), can be built manually if needed
-  - amd64
-  # - i386
+  - armhf
+  - armv7
+  - aarch64
+  - amd64 # Only enable this when testing as other are slow to build with GitHub Actions
+  - i386
 map:
   - share:rw
 ports:
@@ -61,7 +61,7 @@ schema:
   renderer_name: str
   enable_spotify_source: bool
   spotify_name: str
-  librespot_options: str?
+  librespot_options: str
   spotify_token: password?
   log_level: list(trace|debug|info|notice|warning|error|fatal)
 image: "ghcr.io/eddiekk/{arch}-snapcast-server"
