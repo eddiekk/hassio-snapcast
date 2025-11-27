@@ -1,6 +1,6 @@
 ## 0.4.8 (2025-11-27)
 
-- feat: enable builds for all supported architectures (amd64, aarch64)
+- fix: replace deprecated set-output with GITHUB_OUTPUT
 
 ## 0.4.7 (2025-11-26)
 
